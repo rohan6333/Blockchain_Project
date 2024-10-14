@@ -66,7 +66,7 @@ Decentralized-credential-verification/
 ├── README.md                     # Project documentation
 ├── truffle-config.js             # Truffle configuration for smart contract development
 └── .env                          # Environment variables
-
+```
 ## Smart Contract Overview
 
 ### CredentialVerification.sol
@@ -99,29 +99,36 @@ We use IPFS for decentralized storage of credential files. The credential file i
 ```bash
 git clone https://github.com/yourusername/decentralized-credential-verification.git
 cd decentralized-credential-verification
+```
 
 ### Install dependencies:
 ```bash
 npm install
+```
 ### Configure environment variables:
 Create a `.env` file in the root directory with the necessary environment variables (e.g., Ethereum node URLs, API keys for IPFS).
 
 ### Compile smart contracts:
 ```bash
 truffle compile
+```
 ### Deploy smart contracts locally:
 Run Ganache to start a local Ethereum blockchain. Deploy the contracts:
 ```bash
 truffle migrate --network development
+```
 ### Run the backend server:
 ```bash
 cd src/backend
 node server.js
+```
 ### Run the frontend:
 ```bash
 cd src/frontend
 npm start
+```
 ## Running Tests
 To run smart contract tests, use the following command:
 ```bash
 truffle test
+```
