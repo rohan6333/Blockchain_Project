@@ -74,6 +74,15 @@ This Solidity contract handles the core functionality of storing and verifying c
 
 ### IPFS Integration
 We use IPFS for decentralized storage of credential files. The credential file itself is stored on IPFS, while only the hash (generated from the file) is stored on the blockchain. This ensures that the storage remains scalable while keeping the blockchain lightweight.
+## How it Works
+
+1. **Credential Submission**: Users upload credentials (e.g., certificates) through the frontend. These documents are uploaded to IPFS, and a hash of the file is generated.
+
+2. **Blockchain Interaction**: The credential's hash is stored on the Ethereum blockchain via the smart contract. The contract associates the hash with the user's Ethereum address.
+
+3. **Verification**: Employers or institutions can query the blockchain to verify the authenticity of credentials by comparing the hash stored on-chain with the document retrieved from IPFS.
+
+4. **Decentralized Proof**: This ensures that credentials are tamper-proof and can be verified without reliance on centralized authorities.
 
 ## Setup Instructions
 
@@ -94,3 +103,25 @@ cd decentralized-credential-verification
 ### Install dependencies:
 ```bash
 npm install
+### Configure environment variables:
+Create a `.env` file in the root directory with the necessary environment variables (e.g., Ethereum node URLs, API keys for IPFS).
+
+### Compile smart contracts:
+```bash
+truffle compile
+### Deploy smart contracts locally:
+Run Ganache to start a local Ethereum blockchain. Deploy the contracts:
+```bash
+truffle migrate --network development
+### Run the backend server:
+```bash
+cd src/backend
+node server.js
+### Run the frontend:
+```bash
+cd src/frontend
+npm start
+## Running Tests
+To run smart contract tests, use the following command:
+```bash
+truffle test
