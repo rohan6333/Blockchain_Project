@@ -10,7 +10,7 @@ This project aims to solve these problems by creating a decentralized, automated
 
 In today’s job market, skill verification is often centralized, inefficient, and difficult to authenticate across borders. By using a decentralized and automated system, both employers and individuals/freelancers can benefit from a tamper-proof mechanism for the prompt validation of their skills and achievements. This promotes transparency and trust in the hiring and engagement processes, which is crucial for a dynamic global economy.
 
-## Technologies Used
+## Tech Used
 
 - **Ethereum Blockchain**: For decentralized, immutable storage of credential metadata.
 - **Solidity**: Smart contract language to handle credential issuance, storage, and verification.
