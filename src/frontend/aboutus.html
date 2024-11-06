@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us - Web Portal</title>
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/src/frontend/images/logo.png" alt="Company Logo">
+                    <span class="company-name">Cred Chain</span>
+                </a>
+            </div>
+            <button id="login-btn">Login/Register</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solution.html">Solution</a></li>
+                <li><a href="#platform">Platform</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About Us</h1>
+            <p class="description-text">
+                We are keen to simplify the way credentials are verified and shared in today's digital and global landscapes. With the current time-consuming, increasingly complex credential management and the rise of fraudulent claims, our mission is to provide a simple, secure, efficient, and trustworthy solution using blockchain for all stakeholders irrespective of their expertise in blockchain.
+            </p>
+        </div>
+        <div class="feature-box hero-box">
+            <div class="feature-icon">🎓</div>
+            <h3>Our Origins</h3>
+            <p class="description-text">
+                This project was born out of a Blockchain and Web Development Course Project work at IIIT Hyderabad.
+            </p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="section-header">
+            <h2>Contribution to Blockchain Community</h2>
+            <div class="section-divider"></div>
+        </section>
+
+        <section class="features">
+            <div class="feature-box">
+                <div class="feature-icon">🎯</div>
+                <h3>Mission</h3>
+                <p>To simplify credential verification through blockchain with a practical use case, that is accessible, secure, and efficient for all.</p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">👁️</div>
+                <h3>Vision</h3>
+                <p>Creating a global standard for digital credential verification from India, for institutions and individuals globally.</p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">🌟</div>
+                <h3>Community Impact</h3>
+                <p>Active contribution to open-source blockchain projects and educational initiatives in the web3 space.</p>
+            </div>
+        </section>
+
+        <section class="section-header">
+            <h2>Product Road Map</h2>
+            <div class="section-divider"></div>
+        </section>
+
+        <section class="features">
+            <div class="feature-box">
+                <div class="feature-icon">✅</div>
+                <h3>Phase 1 (Completed)</h3>
+                <p>• Core platform - Solidity on EVM<br>
+                   • MetaMask integration<br>
+                   • Basic verification system<br>
+                   • Smart Contracts deployment</p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">⚡</div>
+                <h3>Phase 2 (Next)</h3>
+                <p>• Advanced smart contracts<br>
+                   • Multi-chain support<br>
+                   • IPFS Storage for Digital Copies<br>
+                   • API development</p>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">🎯</div>
+                <h3>Phase 3 (Future)</h3>
+                <p>• Geographical expansion<br>
+                   • Institution partnerships<br>
+                   • Mobile applications<br>
+                   • Advanced analytics</p>
+            </div>
+        </section>
+
+        <section class="section-header">
+            <h2>Upcoming Features</h2>
+            <div class="section-divider"></div>
+        </section>
+
+        <section class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Dec 2024</div>
+                <div class="timeline-content">
+                    <h3>Digital Certificate Storage</h3>
+                    <p>Store & Access Digital copies of Certificates</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 2025</div>
+                <div class="timeline-content">
+                    <h3>Multi-chain Support</h3>
+                    <p>Multi-chain credential verification support</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">April 2025</div>
+                <div class="timeline-content">
+                    <h3>Mobile Application</h3>
+                    <p>Mobile app for credential management</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">May 2025</div>
+                <div class="timeline-content">
+                    <h3>Analytics Dashboard</h3>
+                    <p>Advanced analytics dashboard</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Aug 2025</div>
+                <div class="timeline-content">
+                    <h3>API Access</h3>
+                    <p>Institutional API access</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Oct 2025</div>
+                <div class="timeline-content">
+                    <h3>Security Update</h3>
+                    <p>Advanced security protocols</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-header">
+            <h2>Contact Us</h2>
+            <div class="section-divider"></div>
+        </section>
+
+        <section class="contact-form">
+            <form class="feature-box" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <div id="form-response"></div>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="#terms">Terms & Conditions</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const response = await fetch('http://localhost:5000/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, message })
+            });
+
+            const data = await response.json();
+            const formResponse = document.getElementById('form-response');
+
+            if (data.success) {
+                formResponse.innerHTML = '<p>Your message has been sent successfully!</p>';
+            } else {
+                formResponse.innerHTML = '<p>There was an error sending your message. Please try again later.</p>';
+            }
+
+            document.getElementById('contact-form').reset(); // Reset form after submission
+        });
+    </script>
+</body>
+</html>

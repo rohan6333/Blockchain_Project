@@ -1,58 +1,62 @@
-// src/backend/controllers/credentialController.js
+const { web3, credentialContract } = require('../web3');
+require('dotenv').config();
 
-const Web3 = require('web3');
-const CredentialVerification = require('../../../build/contracts/CredentialVerification.json');
+const account = web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_KEY);
+web3.eth.accounts.wallet.add(account);
 
+// Issue a new credential
+exports.issueCredential = async (req, res) => {
+    const { holderAddress, credentialHash } = req.body;
 
+    try {
+        const result = await credentialContract.methods.issueCredential(holderAddress, credentialHash)
+            .send({ from: account.address, gas: 500000 });
 
-// Setup web3 provider (make sure this matches your Ganache settings)
-const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
-
-let contract;
-const initContract = async () => {
-    const networkId = await web3.eth.net.getId();
-    const deployedNetwork = CredentialVerification.networks[networkId];
-
-    if (deployedNetwork) {
-        contract = new web3.eth.Contract(
-            CredentialVerification.abi,
-            deployedNetwork && deployedNetwork.address
-        );
-    } else {
-        throw new Error('CredentialVerification contract not deployed to detected network');
+        res.status(200).json({ message: 'Credential issued successfully', transaction: result });
+    } catch (error) {
+        console.error('Error issuing credential:', error);
+        res.status(500).json({ message: 'Error issuing credential', error: error.message });
     }
 };
 
-// Initialize the contract
-initContract().catch(console.error);
+// Get credentials for a holder
+exports.getCredentials = async (req, res) => {
+    const { holderAddress } = req.params;
 
-// Controller methods
+    console.log('Fetching credentials for:', holderAddress);
 
-// Get value from contract
-exports.getValue = async (req, res) => {
     try {
-        const value = await contract.methods.value().call();
-        res.status(200).json({ value });
+        if (!web3.utils.isAddress(holderAddress)) {
+            return res.status(400).json({ message: 'Invalid holder address format.' });
+        }
+
+        const credentials = await credentialContract.methods.getCredentials(holderAddress).call();
+        console.log('Retrieved credentials:', credentials);
+
+        if (!credentials || credentials.length === 0) {
+            return res.status(200).json({ message: 'No credentials found for this holder.', credentials });
+        }
+
+        res.status(200).json({ credentials });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: error.message });
+        console.error('Error retrieving credentials:', error);
+        res.status(500).json({ message: 'Error retrieving credentials', error: error.message });
     }
 };
 
-// Set value in contract
-exports.setValue = async (req, res) => {
-    const { newValue } = req.body;
+// Verify a credential for a holder
+exports.verifyCredential = async (req, res) => {
+    const { holderAddress, credentialHash } = req.body;
 
     try {
-        // Get the list of accounts
-        const accounts = await web3.eth.getAccounts();
+        if (!web3.utils.isAddress(holderAddress)) {
+            return res.status(400).json({ message: 'Invalid holder address format.' });
+        }
 
-        // Send the transaction using the first account from Ganache
-        await contract.methods.setValue(newValue).send({ from: accounts[0] });
-
-        res.status(200).json({ message: 'Value updated successfully' });
+        const isValid = await credentialContract.methods.verifyCredential(holderAddress, credentialHash).call();
+        res.status(200).json({ isValid });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: error.message });
+        console.error('Error verifying credential:', error);
+        res.status(500).json({ message: 'Error verifying credential', error: error.message });
     }
 };

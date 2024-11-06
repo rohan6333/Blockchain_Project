@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Web Portal</title>
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <img src="/src/frontend/images/logo.png" alt="Company Logo">
+                <span class="company-name">Cred Chain</span>
+            </div>
+            <button id="login-btn">Login/Register</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solution.html">Solution</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Platform</a>
+                    <div class="dropdown-content">
+                        <a href="platform-issuer.html">For Issuers</a>
+                        <a href="platform-holder.html">For Holders</a>
+                        <a href="platform-checker.html">For Checkers</a>
+                    </div>
+                </li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Secure, Trusted & Global Credential Verification Powered by Blockchain</h1>
+            <a href="#get-started" class="cta-button">Get Started</a>
+        </div>
+        <div class="hero-image">
+            <img src="/src/frontend/images/globe-tech.png" alt="Digital Globe Network" class="globe-animation">
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="features">
+            <div class="feature-box">
+                <div class="feature-icon">🏛️</div>
+                <h3>Credential Issuers</h3>
+                <p>Educational institutions and organizations can securely issue and manage digital credentials with blockchain verification.</p>
+                <a href="solution.html#issuer-guide" class="feature-link">Learn More →</a>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">👤</div>
+                <h3>Credential Holders</h3>
+                <p>Students and professionals can store, manage, and share their verified credentials securely in one place.</p>
+                <a href="#holders" class="feature-link">Learn More →</a>
+            </div>
+            
+            <div class="feature-box">
+                <div class="feature-icon">✓</div>
+                <h3>Credential Checkers</h3>
+                <p>Employers and organizations can instantly verify the authenticity of credentials with blockchain technology.</p>
+                <a href="#checkers" class="feature-link">Learn More →</a>
+            </div>
+        </section>
+        
+        <section class="description">
+            <p class="description-text">
+                A robust, scalable, and secure solution for SELF DRIVEN & QUICK credential verification. 
+                <b>
+                With streamlined processes and secure data handling, we are bridging the gap between credential issuance and verification, making credential management seamless and efficient.
+                </b>
+            </p>
+        </section>
+
+        <!-- Button to issue credential -->
+        <button id="issue-credential-btn">Issue Credential</button>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="#terms">Terms & Conditions</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        async function issueCredential() {
+            const response = await fetch('http://localhost:5000/api/credentials/issue', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    holderAddress: '0xD520Fc7d5Ef07280741A25fd1E8Ad78ABe06eE30', // Replace with dynamic value as needed
+                    credentialHash: 'exampleCredentialHash123' // Replace with actual hash
+                })
+            });
+
+            const data = await response.json();
+            console.log(data);
+            // Handle the response accordingly (e.g., notify the user)
+            if (data.message) {
+                alert(data.message);
+            }
+        }
+
+        document.getElementById('issue-credential-btn').addEventListener('click', issueCredential);
+    </script>
+</body>
+</html>
