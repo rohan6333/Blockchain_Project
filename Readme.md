@@ -1,4 +1,4 @@
-@@ -1,134 +0,0 @@
+
 # Decentralized Credential Verification Platform
 ## Problem Statement
 Currently, verifying someone's skills or credentials (such as degrees, certifications, or work experience) requires reliance on centralized institutions, organizations, or councils that issue or maintain records. These institutions are often slow, inefficient, and prone to errors, particularly in the context of cross-border verification. The challenge becomes even more significant when dealing with global-level engagements or when skills are acquired outside of formal academic institutions.
