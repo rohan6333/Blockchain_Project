@@ -1,0 +1,56 @@
+/* Issuer Dashboard Styling */
+.issuer-dashboard-container {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* White text */
+  min-height: 100vh;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title Styling */
+.dashboard-title {
+  font-size: 2rem;
+  color: #00ffff; /* Cyan */
+  margin-bottom: 30px;
+}
+
+/* Cards Container */
+.dashboard-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Individual Card Styling */
+.dashboard-card {
+  background-color: #1e1e1e; /* Slightly lighter dark */
+  border: 1px solid #00ffff; /* Cyan border */
+  border-radius: 10px;
+  padding: 20px;
+  width: 30%;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.5);
+}
+
+.dashboard-card h3 {
+  color: #00ffff; /* Cyan */
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e0e0e0; /* Light gray for text */
+}

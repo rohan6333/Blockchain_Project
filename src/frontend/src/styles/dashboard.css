@@ -1,0 +1,126 @@
+/* Dashboard Styling */
+.dashboard-container {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Navbar */
+  .dashboard-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #1e1e1e; /* Slightly lighter dark */
+    border-bottom: 1px solid #00ffff;
+  }
+  
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #00ffff;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #00ffff; /* Cyan highlight */
+  }
+  
+  .logout-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background-color: #ff4d4d; /* Logout button red */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #e04343; /* Darker red */
+  }
+  
+  /* Header */
+  .dashboard-header {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: #00ffff; /* Cyan text */
+    font-size: 1.8rem;
+  }
+  
+  /* Section */
+  .dashboard-section {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+    gap: 20px;
+  }
+  
+  .dashboard-card {
+    background-color: #1e1e1e;
+    border: 1px solid #00ffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .dashboard-card h2 {
+    color: #00ffff;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /* Footer */
+  .dashboard-footer {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+  }
+  
+  .footer-link {
+    text-decoration: none;
+    color: #00ffff;
+    font-size: 0.9rem;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  

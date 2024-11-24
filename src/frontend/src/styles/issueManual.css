@@ -1,0 +1,73 @@
+/* IssueManual Page Styling */
+.issue-manual-container {
+    background-color: #121212; /* Dark theme background */
+    color: #ffffff; /* White text for visibility */
+    min-height: 100vh;
+    padding: 20px 40px;
+  }
+  
+  .issue-manual-title {
+    font-size: 2.5rem;
+    color: #00ffff; /* Cyan theme color */
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .issue-manual-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #1e1e1e; /* Slightly lighter for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  .issue-manual-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+  
+  .issue-manual-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #00ffff;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .issue-manual-input:focus {
+    outline: none;
+    border-color: #00e0e0; /* Lighter cyan */
+  }
+  
+  .issue-manual-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00ffff;
+    border: none;
+    border-radius: 5px;
+    color: #121212;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .issue-manual-button:hover {
+    background-color: #00e0e0; /* Lighter cyan */
+  }
+  
+  .issue-manual-message {
+    margin-top: 20px;
+    color: #00ff00; /* Success green */
+    text-align: center;
+  }
+  
+  .issue-manual-error {
+    margin-top: 20px;
+    color: #ff0000; /* Error red */
+    text-align: center;
+  }
+  

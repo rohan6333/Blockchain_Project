@@ -112,3 +112,5 @@ To run smart contract tests, use the following command:
 ```bash
 truffle test
 ```
+npm start
+sudo -u postgres psql
