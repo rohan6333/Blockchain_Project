@@ -18,46 +18,68 @@ In today’s job market, skill verification is often centralized, inefficient, a
 ## Project Structure
 ```plaintext
 Decentralized-credential-verification/
-│
-├── contracts/                    # All Solidity smart contracts
+├── .env                      # Environment variables
+├── .gitignore                # Git ignore file
+├── package.json              # Node.js dependencies
+├── truffle-config.js         # Truffle configuration for smart contract deployment
+├── README.md                 # Project documentation
+├── build/                    # Compiled contract artifacts
+│   └── contracts/            # ABI files
+├── contracts/                # Solidity contracts
 │   └── CredentialVerification.sol
-│
-├── migrations/                   # Migration scripts for deploying contracts
-│   └── 1_initial_migration.js
-│
-├── test/                         # Smart contract test files
-│   └── CredentialVerification.test.js
-│
-├── src/                          # Main source code directory
-│   ├── backend/                  # Backend logic and APIs (Node.js, Express, etc.)
-│   │   ├── server.js             # Backend server entry point
-│   │   ├── routes/               # API routes for backend
-│   │   │   └── credentialRoutes.js
-│   │   └── controllers/          # Controllers for managing business logic
-│   │       └── credentialController.js
-│   │
-│   ├── frontend/                 # Frontend code (React)
-│   │   ├── public/               # Public assets
-│   │   │   ├── index.html
-│   │   │   └── favicon.ico
-│   │   ├── src/                  # React source files
-│   │   │   ├── components/       # UI components
-│   │   │   ├── App.js            # Main React app file
-│   │   │   └── index.js          # React app entry point
-│   │
-│   ├── utils/                    # Utility scripts and helpers
-│   │   └── ipfsHelper.js         # Helper for interacting with IPFS
-│
-├── config/                       # Config files for different environments
-│   └── config.js                 # Environment variables, API keys, etc.
-│
-├── build/                        # Build directory for compiled frontend files (created after running build)
-│
-├── .gitignore                    # List of files/folders to be ignored by Git
-├── package.json                  # Node.js dependencies and scripts
-├── README.md                     # Project documentation
-├── truffle-config.js             # Truffle configuration for smart contract development
-└── .env                          # Environment variables
+├── migrations/               # Deployment scripts
+│   ├── 1_initial_migration.js
+│   └── 2_deploy_credential_verification.js
+├── src/
+│   ├── backend/              # Backend server
+│   │   ├── server.js         # Main backend server
+│   │   ├── web3.js           # Web3 integration
+│   │   ├── controllers/      # Controller logic
+│   │   │   ├── authController.js
+│   │   │   └── credentialController.js
+│   │   ├── middleware/       # Middleware logic
+│   │   │   └── authMiddleware.js
+│   │   ├── models/           # Database models
+│   │   │   ├── index.js
+│   │   │   └── user.js
+│   │   ├── routes/           # API routes
+│   │   │   ├── credentialRoutes.js
+│   │   │   └── userRoutes.js
+│   │   └── uploads/          # Bulk upload files
+│   ├── frontend/             # Frontend React application
+│   │   ├── public/           # Static assets
+│   │   │   ├── favicon.ico
+│   │   │   └── index.html
+│   │   ├── src/              # React source code
+│   │   │   ├── components/   # Reusable components
+│   │   │   │   ├── Footer.js
+│   │   │   │   ├── MetaMaskButton.js
+│   │   │   │   └── NavBar.js
+│   │   │   ├── config/       # Web3 configuration
+│   │   │   │   └── web3.js
+│   │   │   ├── pages/        # Pages for the application
+│   │   │   │   ├── BulkIssue.js
+│   │   │   │   ├── Dashboard.js
+│   │   │   │   ├── Holders.js
+│   │   │   │   ├── IssueManual.js
+│   │   │   │   ├── IssuerDashboard.js
+│   │   │   │   ├── Login.js
+│   │   │   │   ├── Register.js
+│   │   │   │   └── Verify.js
+│   │   │   ├── styles/       # CSS files for each page
+│   │   │   │   ├── auth.css
+│   │   │   │   ├── bulkIssue.css
+│   │   │   │   ├── dashboard.css
+│   │   │   │   ├── holders.css
+│   │   │   │   ├── issueManual.css
+│   │   │   │   ├── issuerDashboard.css
+│   │   │   │   ├── verify.css
+│   │   │   │   └── App.css
+│   │   │   ├── App.js
+│   │   │   ├── index.js
+│   │   │   ├── routes.js
+│   │   │   ├── reportWebVitals.js
+│   │   │   └── README.md
 ```
 ## Smart Contract Overview
 ### CredentialVerification.sol
@@ -112,5 +134,8 @@ To run smart contract tests, use the following command:
 ```bash
 truffle test
 ```
-npm start
+
+## Running DB
+```bash
 sudo -u postgres psql
+```
